@@ -20,6 +20,8 @@ function App() {
       <ListItem
         filteredDatas={filteredDatas}
         showFormattedDate={showFormattedDate}
+        setDatas={setDatas}
+        setFilteredDatas={setFilteredDatas}
       />
     </>
   );
