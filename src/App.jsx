@@ -1,6 +1,7 @@
-import { getInitialData } from "./utils";
+import { getInitialData, showFormattedDate } from "./utils";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
+import ListItem from "./components/ListItem";
 
 function App() {
   const [datas, setDatas] = useState(getInitialData);
@@ -9,7 +10,8 @@ function App() {
   return (
     <>
       <SearchBar datas={datas} setFilteredDatas={setFilteredDatas} />
-      
+      <br />
+      <ListItem filteredDatas={filteredDatas} showFormattedDate={showFormattedDate}/>
     </>
   );
 }

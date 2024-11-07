@@ -1,19 +1,24 @@
 import PropTypes from "prop-types";
+import Item from "./Item";
 
-function ListItem({ title, body, createdAt, showFormattedDate }) {
+function ListItem({ filteredDatas, showFormattedDate }) {
   return (
     <>
-      <h3>{title}</h3>
-      <p>{showFormattedDate(createdAt)}</p>
-      <p>{body}</p>
+    <h2>Note</h2>
+      {filteredDatas.filter(data => data.archived === false).map((data) => (
+        <Item key={data.id} {...data} showFormattedDate={showFormattedDate}/>
+      ))}
+      <br />
+    <h2>Archive</h2>
+      {filteredDatas.filter(data => data.archived === true).map((data) => (
+        <Item key={data.id} {...data} showFormattedDate={showFormattedDate}/>
+      ))}
     </>
   );
 }
 
 ListItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
+  filteredDatas: PropTypes.array.isRequired,
   showFormattedDate: PropTypes.func.isRequired,
 };
 
