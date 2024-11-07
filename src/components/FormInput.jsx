@@ -4,6 +4,13 @@ import { useState } from "react";
 function FormInput({ datas, setDatas, setFilteredDatas }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const maxTitleLenght = 50;
+
+  const handleTitleChange = (e) => {
+    if (e.target.value.length <= maxTitleLenght) {
+      setTitle(e.target.value);
+    }
+  };
 
   const addData = (event) => {
     event.preventDefault();
@@ -28,10 +35,9 @@ function FormInput({ datas, setDatas, setFilteredDatas }) {
           type="text"
           placeholder="Title"
           value={title}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
+          onChange={handleTitleChange}
         />
+        <p>Karakter yang dapat anda gunakan tersisa {maxTitleLenght - title.length}</p>
         <br />
         <input
           type="text"
