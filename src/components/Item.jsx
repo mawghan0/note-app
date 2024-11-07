@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import ArchiveItem from "./ArchiveItem";
+import DeleteItem from "./DeleteItem";
 
 function Item({
   title,
@@ -24,6 +25,14 @@ function Item({
         setDatas={setDatas}
         setFilteredDatas={setFilteredDatas}
       />
+      {archived ? null : (
+        <DeleteItem
+          id={id}
+          datas={datas}
+          setDatas={setDatas}
+          setFilteredDatas={setFilteredDatas}
+        />
+      )}
     </>
   );
 }
