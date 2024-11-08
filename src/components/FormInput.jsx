@@ -33,7 +33,7 @@ function FormInput({ datas, setDatas, setFilteredDatas }) {
       <h2 className="font-bold text-base text-center mt-3">Tambahkan Note</h2>
       <form
         onSubmit={addData}
-        className="flex flex-col rounded-xl bg-slate-200 px-2 border my-2 w-[95%] self-center sm:w-3/4"
+        className="flex flex-col rounded-xl bg-slate-200 px-2 border my-2 w-[95%] self-center sm:w-3/4 xl:w-6/12"
       >
         <input
           type="text"
