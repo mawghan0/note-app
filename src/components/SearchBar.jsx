@@ -17,6 +17,7 @@ function SearchBar({ datas, setFilteredDatas }) {
   return (
     <>
       <input
+      className="bg-slate-100 h-8 rounded-md ml-14 pl-2 w-36 sm:w-48 sm:mr-4"
         type="text"
         placeholder="Search note..."
         value={input}

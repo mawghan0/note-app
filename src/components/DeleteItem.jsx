@@ -9,7 +9,12 @@ function DeleteItem({ id, datas, setDatas, setFilteredDatas }) {
   };
   return (
     <>
-      <button onClick={deleteData}>Delete</button>
+      <button
+        onClick={deleteData}
+        className="bg-red-500 py-2 px-4 rounded-full"
+      >
+        Delete
+      </button>
     </>
   );
 }

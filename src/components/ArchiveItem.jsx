@@ -11,7 +11,7 @@ function ArchiveItem({ archived, id, datas, setDatas, setFilteredDatas }) {
   };
   return (
     <>
-      <button onClick={archiveData}>
+      <button onClick={archiveData} className="bg-yellow-400 py-2 px-4 rounded-full">
         {archived ? <p>Unarchive</p> : <p>Archive</p>}
       </button>
     </>

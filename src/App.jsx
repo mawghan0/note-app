@@ -8,22 +8,25 @@ function App() {
   const [datas, setDatas] = useState(getInitialData);
   const [filteredDatas, setFilteredDatas] = useState(datas);
   return (
-    <>
-      <SearchBar datas={datas} setFilteredDatas={setFilteredDatas} />
-      <br />
+    <div className="bg-slate-50 font-sans text-slate-900 flex flex-col">
+      <div className="header flex h-11 bg-teal-200 place-items-center sm:justify-between">
+        <h1 className="font-bold pl-2 text-teal-700">Note-App</h1>
+        <SearchBar datas={datas} setFilteredDatas={setFilteredDatas} />
+      </div>
+
       <FormInput
         datas={datas}
         setDatas={setDatas}
         setFilteredDatas={setFilteredDatas}
       />
-      <br />
+
       <ListItem
         filteredDatas={filteredDatas}
         showFormattedDate={showFormattedDate}
         setDatas={setDatas}
         setFilteredDatas={setFilteredDatas}
       />
-    </>
+    </div>
   );
 }
 

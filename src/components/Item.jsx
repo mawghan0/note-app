@@ -14,10 +14,11 @@ function Item({
   setFilteredDatas,
 }) {
   return (
-    <>
-      <h3>{title}</h3>
-      <p>{showFormattedDate(createdAt)}</p>
-      <p>{body}</p>
+    <div className="mb-4 flex flex-col border-2 border-teal-200 rounded-xl px-2">
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="text-sm font-extralight">{showFormattedDate(createdAt)}</p>
+      <p className="text-justify">{body}</p>
+      <div className="mx-auto flex gap-24 my-3">
       <ArchiveItem
         archived={archived}
         id={id}
@@ -33,7 +34,8 @@ function Item({
           setFilteredDatas={setFilteredDatas}
         />
       )}
-    </>
+      </div>
+    </div>
   );
 }
 
